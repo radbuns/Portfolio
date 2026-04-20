@@ -1,0 +1,506 @@
+/* Letakkan ini di BARIS PALING ATAS file style.css */
+:root {
+    --bg-main: #0d1117;       /* Hitam Dark Mode */
+    --text-color: #ffffff;    /* Putih */
+    --accent: #2ecc70;        /* Hijau Glow */
+    --spacing-large: 40px;    /* Contoh untuk jarak */
+}
+body.light-theme {
+    --bg-main: #fdf5e6; /* Old Lace - Kuning sangat lembut */
+    --text-color: #333; /* Abu-abu gelap untuk teks di mode terang */
+    --accent: #d35400; /* Oranye bata agar senada dengan tema hangat */
+}
+body {
+    font-family: 'segoe ui', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: var(--bg-main);
+    /* Warna gelap ala GitHub */
+    color: #c9d1d9;
+    /* Teks abu-abu terang agar nyaman dibaca */
+    margin: 0;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    padding: 50px 0;
+    background: #161b22;
+    border-bottom: 2px solid #30363d;
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.hero {
+    height: 100vh; /* Memenuhi seluruh tinggi layar saat pertama dibuka */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Konten teks di tengah vertikal */
+    align-items: center;
+    text-align: center;
+    background-color: var(--bg-main);
+    position: relative;
+    padding-bottom: 100px; /* Ruang untuk carousel di bawah */
+}
+
+.hero-content {
+    margin-bottom: 50px;
+    animation: fadeInUp 1s ease; /* Animasi muncul saat halaman dimuat */
+}
+
+/* --- Memoles Teks --- */
+#typing-hero {
+    font-size: 4rem; /* Sangat besar dan dominan */
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+.hero-cta {
+    margin-top: 25px;
+}
+.btn-secondary.light-theme a{
+    color: #2ecc71; /* Warna hijau yang cerah untuk mode terang */
+}
+body.light-theme .btn-secondary {
+    color: #1a1a1a; /* Ubah jadi hitam/abu gelap */
+}
+/* Gaya Dasar untuk Kedua Tombol */
+.hero-cta a {
+    text-decoration: none; /* Menghapus garis bawah */
+    font-weight: 600;
+    transition: all 0.3s ease;
+    padding: 10px 20px;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+/* Tombol Utama (View My Work) */
+.btn-primary {
+    color: #2ecc71; /* Gunakan warna hijau agar senada dengan ikon tema */
+    border: 2px solid #2ecc71;
+}
+
+.btn-primary:hover {
+    background-color: #2ecc71;
+    color: #0d1117; /* Teks jadi gelap saat background hijau */
+    box-shadow: 0 0 15px rgba(46, 204, 113, 0.4);
+}
+
+/* Tombol Kedua (Let's Talk) */
+.btn-secondary {
+    color: #ffffff;
+    opacity: 0.7;
+}
+
+.btn-secondary:hover {
+    opacity: 1;
+    color: #2ecc71;
+}
+
+.divider {
+    color: #444;
+    margin: 0 10px;
+}
+.hero-subtitle {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    opacity: 0.8;
+    margin-top: -10px;
+}
+
+/* --- Menyatukan Carousel --- */
+.hero-tools-carousel {
+    position: absolute;
+    bottom: 0; /* Menempel di paling bawah Hero Section */
+    width: 100%;
+    /* Gunakan efek pudar (gradient mask) di pinggir agar carousel menyatu */
+    -webkit-mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+}
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.hero {
+    background: radial-gradient(circle at center, #1a2a24 0%, #0d1117 70%);
+    /* Ini akan membuat bagian tengah sedikit lebih terang/kehijauan dibanding pinggirnya */
+}
+.hero-content h1 {
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.hero-content p {
+    animation: fadeInUp 0.8s ease forwards 0.3s; /* Delay 0.3 detik */
+    opacity: 0;
+}
+.hero-content a {
+    animation: fadeInUp 0.8s ease forwards 0.6s; /* Delay 0.6 detik */
+    opacity: 0;
+}
+.skill-tag {
+    background: #2980b9;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin: 0 5px;
+    display: inline-block;
+}
+nav a {
+    text-decoration: none;
+    color: #3498db;
+    font-weight: bold;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #e74c3c;
+}
+
+button {
+    background-color: #27ae60;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    /* Membuat tombol lonjong/rounded */
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    /* Membuat perubahan warna terasa halus */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    background-color: #2ecc71;
+    transform: translateY(-3px); /* Tombol sedikit naik ke atas */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3); /* Bayangan jadi lebih tebal */
+}
+
+section ul {
+    display: flex;
+    /* Aktifkan mode flexbox */
+    justify-content: space-around;
+    /* Beri jarak yang rata antar item */
+    flex-wrap: wrap;
+    /* Jika layar sempit (seperti di HP), otomatis turun ke bawah */
+    padding: 0;
+    list-style: none;
+    /* Menghilangkan titik-titik (bullet points) */
+}
+
+/* Mengatur kotak setiap skill */
+section ul>li {
+    background: #161b22;
+    color: #c9d1d9;
+    padding: 20px;
+    margin: 10px;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Memberi efek bayangan halus */
+    flex: 1;
+    /* Membuat lebar kotak fleksibel */
+    min-width: 250px;
+    /* Lebar minimal agar tidak terlalu gepeng */
+}
+
+section {
+    max-width: 1000px;
+    /* Membatasi lebar agar tidak terlalu melar di layar lebar */
+    margin: 40px auto;
+    /* Menengahkan section dan memberi jarak atas-bawah */
+    padding: 20px;
+}
+
+/* Menargetkan daftar karya (kotak kecil) di dalam kartu skill */
+section ul li ul {
+    display: block;
+    /* Pastikan daftar karya berderet ke bawah, bukan ke samping */
+    padding: 0;
+    margin-top: 15px;
+    /* Beri jarak dari judul Skill */
+}
+
+/* Mengatur tampilan kotak karya kecil */
+section ul li ul li {
+    background: #1c2128;
+    /* Warna abu-abu gelap kebiruan */
+    color: #adbac7;
+    /* Warna teks abu-abu terang */
+    margin: 8px 0;
+    padding: 12px;
+    border-radius: 6px;
+    border-left: 4px solid #3498db;
+    /* Garis biru aksen tetap dipertahankan */
+    box-shadow: none;
+}
+
+.project-card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.tags span {
+    background: #238636;
+    /* Hijau khas GitHub */
+    color: white;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-right: 5px;
+    display: inline-block;
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: #58a6ff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.project-link:hover {
+    text-decoration: underline;
+}
+/* Aturan warna saat class .light-theme aktif di body */
+body.light-theme {
+    /* Warna latar belakang kuning hangat yang nyaman (Cream/Beige) */
+    --bg-main: #fdf5e6; /* Old Lace - Kuning sangat lembut */
+    --bg-card: #f5eedc; /* Sedikit lebih gelap untuk kontras elemen */
+    
+    /* Warna teks abu-abu sangat tua (jangan hitam pekat agar tidak kaku) */
+    --text-color:   ; 
+    
+    /* Warna aksen (bisa disesuaikan agar cocok dengan kuning) */
+    --accent: #d35400; /* Oranye bata agar senada dengan tema hangat */
+    
+    --btn-text: #f5eedc; /* Warna teks tombol yang kontras dengan latar belakang */
+}
+body.light-theme header {
+    background: #f0f2f5;
+    color: #1a1a1a;
+    border-bottom: 2px solid #ddd;
+}
+
+body.light-theme section ul > li {
+    background: #f8f9fa;
+    color: #f5eedc;
+    border: 1px solid #ddd;
+}
+
+body.light-theme section ul li ul li {
+    background: #ffffff;
+    color: #333;
+    border-left: 4px solid #3498db;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+body.light-theme .project-card {
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+}
+body {
+    /* ... kode kamu yang lain ... */
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+#theme-icon {
+    display: inline-block; /* Penting agar transformasi bisa berjalan */
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s;
+}
+body.light-theme .btn-primary {
+    color: #d35400; 
+    border-color: #d35400;
+}
+/* Saat dalam mode light, putar ikon matahari */
+body.light-theme #theme-icon {
+    transform: rotate(360deg) scale(1.2);
+    color: #f1c40f; /* Warna kuning matahari */
+}
+/* Animasi Bersinar untuk Matahari */
+@keyframes sunshine {
+    0% { transform: scale(1); filter: drop-shadow(0 0 0px #f1c40f); }
+    50% { transform: scale(1.1); filter: drop-shadow(0 0 8px #f1c40f); }
+    100% { transform: scale(1); filter: drop-shadow(0 0 0px #f1c40f); }
+}
+
+@keyframes moonFloat {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-4px) rotate(5deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+#theme-toggle {
+    background: none;       /* Menghilangkan kotak hijau */
+    border: none;           /* Menghilangkan garis pinggir */
+    padding: 10px;          /* Tetap beri ruang agar mudah diklik */
+    cursor: pointer;        /* Menunjukkan bahwa ini tombol */
+    font-size: 1.5rem;      /* Ukuran ikon bulan/matahari */
+    color: var(--text-color); /* Mengikuti warna teks tema aktif */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Animasi membal */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#theme-toggle:active {
+    filter: drop-shadow(0 0 15px var(--accent)); /* Bercahaya saat ditekan */
+}
+
+#theme-toggle:hover {
+    transform: scale(1.2) rotate(15deg); /* Sedikit membesar dan miring saat dihover */
+    color: var(--accent); /* Berubah warna ke aksen (misal: kuning/hijau) */
+}
+/* Pastikan ikon adalah inline-block agar animasi berjalan mulus */
+#theme-icon {
+    display: inline-block;
+    transition: color 0.3s ease; /* Transisi warna teks saja */
+}
+
+/* --- KONDISI STANDAR (DARK MODE) --- */
+/* Terapkan animasi mengambang pada ikon bulan */
+body:not(.light-theme) #theme-icon {
+    animation: moonFloat 3s ease-in-out infinite;
+    color: #ffffff; /* Warna kuning bulan yang lembut */
+}
+
+/* --- KONDISI LIGHT MODE --- */
+/* Terapkan animasi bersinar pada ikon matahari */
+body.light-theme #theme-icon {
+    animation: sunshine 2s ease-in-out infinite;
+    color: #000000; /* Warna oranye matahari yang kuat */
+}
+.slider-container {
+    overflow: hidden; /* Menyembunyikan ikon yang keluar jalur */
+    padding: 40px 0;
+    background: var(--bg-card);
+    position: relative;
+}
+
+.slider-track {
+    display: flex;
+    width: calc(200px * 10); /* Sesuaikan: lebar ikon x jumlah total ikon */
+    animation: scroll 20s linear infinite;
+}
+
+/* Animasi geser */
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-200px * 5)); } /* Berhenti di setengah total ikon */
+}
+
+/* Berhenti saat kursor di atasnya */
+.slider-track:hover {
+    animation-play-state: paused;
+}
+.tool-item {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    color: var(--accent);
+    position: relative;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+/* Efek Pop-out */
+.tool-item:hover {
+    transform: scale(1.3);
+    color: #f1c40f;
+}
+
+/* Munculkan Teks Nama Tool */
+.tool-item::after {
+    content: attr(data-name); /* Mengambil teks dari HTML data-name */
+    position: absolute;
+    bottom: -30px;
+    font-size: 14px;
+    opacity: 0;
+    transition: 0.3s;
+    color: var(--text-color);
+}
+
+.tool-item:hover::after {
+    opacity: 1;
+    bottom: -17px;
+}
+
+.contact-icons {
+    display: flex;
+    align-items: center; /* Memastikan semua ikon sejajar di tengah secara horizontal */
+    justify-content: center;
+    gap: 30px;
+}
+
+.contact-icons a {
+    font-size: 2.5rem; /* Ukuran ikon yang besar dan jelas */
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+/* Warna spesifik saat hover untuk masing-masing platform */
+.contact-icons a:hover {
+    transform: translateY(-5px); /* Efek melompat kecil */
+}
+
+.contact-icons a[title="Email Me"]:hover {
+    color: #40e469; /* Warna khas Instagram */
+}
+
+.contact-icons a[title="Instagram"]:hover {
+    color: #e4405f; /* Warna khas Instagram */
+}
+
+.contact-icons a[title="GitHub"]:hover {
+    color: #4078c0; /* Warna khas GitHub */
+}
+
+.contact-icons a[title="Contra"]:hover {
+    filter: invert(58%) sepia(93%) saturate(1542%) hue-rotate(353deg) brightness(101%) contrast(105%);
+}
+.custom-icon {
+    width: 35px;  /* Sesuaikan agar tingginya sama dengan ikon Font Awesome */
+    height: 35px;
+    object-fit: contain;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+/* --- KONDISI SAAT MODE CERAH AKTIF --- */
+body.light-theme .custom-icon {
+    /* Mengubah putih menjadi hitam/abu gelap agar terlihat di background terang */
+    filter: brightness(0); 
+    /* ATAU gunakan filter oranye yang kita bahas tadi jika ingin berwarna */
+}
+
+/* --- EFEK HOVER (OPSIONAL) --- */
+.custom-icon-link:hover .custom-icon {
+    transform: translateY(-5px);
+    /* Saat disentuh, berubah jadi oranye baik di mode gelap maupun terang */
+    filter: invert(58%) sepia(93%) saturate(1542%) hue-rotate(353deg) brightness(101%) contrast(105%);
+}
+.custom-divider {
+    height: 2px; /* Memberikan ketebalan agar terlihat */
+    width: 60%;  /* Memberikan panjang garis */
+    background-color: greenyellow; /* Memastikan warna mengambil dari variabel */
+    margin: 40px auto; /* Jarak atas-bawah 40px, auto agar ke tengah */
+    border-radius: 2px;
+    display: block; /* Memastikan elemen dianggap sebagai blok */
+}
+/* Solid border */
+hr.rounded-divider {
+  border-top: 4px solid #2ecc70;
+  border-radius: 5px;
+  width: 60%;
+  margin: 40px auto;
+}
